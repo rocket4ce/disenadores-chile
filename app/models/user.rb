@@ -21,11 +21,7 @@ class User < ActiveRecord::Base
      message: "solo numeros y letras" }
   validates :avatar, file_size: { maximum: 5.megabytes.to_i }
 
-  # def self.search(query, boolean)
-  #   if query.present?
-  #     where("name like ?", "%#{query}%")
-  #   end
-  # end
+  has_many :portafolios
 
   extend FriendlyId
   friendly_id :name, use: :slugged
