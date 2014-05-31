@@ -4,8 +4,9 @@
 <div class="margintop-20px">
 <%= search_form_for @search do |f| %>
 <div class="small-8 medium-8 columns">
-    <%= f.search_field :name_cont %>
+    <%= f.search_field :name_cont, :placeholder => "Busqueda de Usuarios" %>
   	<%= f.check_box :pago_true %>
+    <%= f.label :pago_true, "Pagos al día"%>
 </div>
   <div class="small-4 medium-4 columns">
   	<%= f.submit "Buscar",  :class =>'postfix small button expand' %>
@@ -14,18 +15,18 @@
 
   
 </div>
-  	
+<div class="clearfix"></div>
     <h3>Usuarios</h3>
     <div>
 <table>
   <thead>
     <tr>
-      <th>Nombre de Usuario</th>
-      <th>E-Mail de Usuario</th>
       <th>Avatar</th>
-      <th>Estan al día con los pagos?</th>
-      <th>Fecha de pago</th>
-      <th>Fecha de pago</th>
+      <th><%= sort_link @search, :name, "Nombre de Usuario" %></th>
+      <th><%= sort_link @search, :email, "E-Mail de Usuario" %></th>
+      <th><%= sort_link @search, :role, "Nivel de Usuario" %></th>
+      <th><%= sort_link @search, :pago, "Estan al día con los pagos?" %></th>
+      <th><%= sort_link @search, :fechapago, "Fecha de pago" %></th>
     </tr>
   </thead>
   <tbody>
