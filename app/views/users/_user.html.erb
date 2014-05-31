@@ -1,12 +1,17 @@
-<td>
-  <%= link_to user.email, user %>
-</td>
-<td>
-  <%= form_for(user) do |f| %>
-    <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
-    <%= f.submit 'Change Role', :class => 'button-xs' %>
-  <% end %>
-</td>
-<td>
-  <%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless user == current_user %>
-</td>
+<%= form_for(user) do |f| %>
+	<td>
+	<% if user.avatar? %>
+		<%= image_tag(user.avatar_url) %>
+	<% else %>
+		<%= f.file_field :avatar %>
+	<% end %>
+	</td>
+	<td><%= link_to user.name, user %></td>	
+	<td><%= user.email %></td>	
+    <td><%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %></td>	
+    <td><%= f.check_box(:pago) %></td>	
+    <td><%= f.date_field(:fechapago) %></td>	
+    <td><%= f.submit 'Actualizar', :class => 'button-xs' %></td>	
+<% end %>
+<td><%= link_to("Eliminar Usuario", user_path(user), :data => { :confirm => "Administrador estas seguro?" }, :method => :delete, :class => 'button-xs') unless user == current_user %></td>	
+

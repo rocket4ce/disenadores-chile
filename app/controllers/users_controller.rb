@@ -4,20 +4,29 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    if params[:search]
+      @users = User.search(params[:search]).order("created_at DESC")
+    else
+      @users = User.all.order('created_at DESC')
+    end
     authorize @users
   end
 
   def show
-    @user = User.find(params[:id])
-    unless current_user.admin?
-      unless @user == current_user
-        redirect_to :back, :alert => "Access denied."
+    @user = User.friendly.find(params[:id])
+    unless current_user.id == @user.id
+      case current_user.pago && @user.pago
+      when true
+      when @user.pago? 
+        redirect_to root_path, :alert => "El usuario #{@user.name} no tiene permiso para que vean su portafolios"
+      when current_user.pago?
+        redirect_to root_path, :alert => "Para poder ver los portafolios de otros tienes que estar estar al día con tus cuotas"
       end
     end
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     authorize @user
     if @user.update_attributes(secure_params)
       redirect_to users_path, :notice => "User updated."
@@ -27,7 +36,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
+    user = User.friendly.find(params[:id])
     authorize user
     unless user == current_user
       user.destroy
@@ -40,7 +49,7 @@ class UsersController < ApplicationController
   private
 
   def secure_params
-    params.require(:user).permit(:role)
+    params.require(:user).permit(:role, :pago, :fechapago, :avatar)
   end
 
 end

@@ -1,1 +1,14 @@
 <h3>Home</h3>
+<ul>
+	<% @users.each do |f| %>
+		<li>
+			<%= link_to f.name, f %>
+			<br>
+		<% if user_signed_in?%>
+			<% if f.id === current_user.id  %>	
+				Lo tengo pagado: <%= f.fechapago if f.pago? %>
+			<% end %>
+		<% end %>
+		</li>
+	<% end %>
+</ul>

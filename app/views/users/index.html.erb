@@ -1,16 +1,41 @@
 <div class="container">
   <div class="row">
-    <h3>Users</h3>
-    <div class="column">
-      <table class="table">
-        <tbody>
-          <% @users.each do |user| %>
-            <tr>
-              <%= render user %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+  <h3>Buscar Usuarios</h3>
+<div class="margintop-20px">
+<%= form_tag(users_path, :method => "get", id: "search-form") do %>
+<div class="small-8 medium-8 columns">
+  	<%= text_field_tag :search, params[:search], placeholder: "Buscar usuario" %>
+</div>
+  <div class="small-4 medium-4 columns">
+  	<%= submit_tag "Buscar", :name => nil, :class =>'postfix small button expand' %>
+  </div>
+<% end %>
+
+  
+</div>
+  	
+    <h3>Usuarios</h3>
+    <div>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre de Usuario</th>
+      <th>E-Mail de Usuario</th>
+      <th>Avatar</th>
+      <th>Estan al día con los pagos?</th>
+      <th>Fecha de pago</th>
+      <th>Fecha de pago</th>
+    </tr>
+  </thead>
+  <tbody>
+
+	 <% @users.each do |user| %>
+		<tr>
+			<%= render user %>
+		</tr>            
+	<% end %>
+  </tbody>
+</table>
     </div>
   </div>
 </div>
