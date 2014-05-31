@@ -12,8 +12,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @portafolio.user_id %>
+  <%= @portafolio.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_portafolio_path(@portafolio) %> |
-<%= link_to 'Back', portafolios_path %>
+

@@ -3,15 +3,13 @@ class UsersController < ApplicationController
   after_action :verify_authorized, except: [:show]
 
   def index
-    # @q = User.search(params[:q])
-    # @q.result(distinct: true)
     @search = User.search(params[:q])
     @users = @search.result(distinct: true)
     authorize @users
   end
 
   def show
-    @user = User.friendly.find(params[:id])
+    @user = User.find(params[:id])
     unless current_user.id == @user.id
       case current_user.pago && @user.pago
       when true
@@ -24,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.friendly.find(params[:id])
+    @user = User.find(params[:id])
     authorize @user
     if @user.update_attributes(secure_params)
       redirect_to users_path, :notice => "User updated."
@@ -34,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.friendly.find(params[:id])
+    user = User.find(params[:id])
     authorize user
     unless user == current_user
       user.destroy

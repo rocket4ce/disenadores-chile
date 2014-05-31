@@ -21,8 +21,8 @@ class User < ActiveRecord::Base
      message: "solo numeros y letras" }
   validates :avatar, file_size: { maximum: 5.megabytes.to_i }
 
-  has_many :portafolios
+  has_many :portafolios, dependent: :destroy
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :finders]
 end

@@ -4,19 +4,24 @@ class PortafoliosController < ApplicationController
   # GET /portafolios
   # GET /portafolios.json
   def index
-    @portafolios = current_user.portafolios.all
+    @portafolios = Portafolio.all
   end
 
   # GET /portafolios/1
   # GET /portafolios/1.json
   def show
+    @portafolios = Portafolio.find(params[:id])
   end
 
   # GET /portafolios/new
   def new
-    @user = current_user
-    @portafolio = current_user.portafolios.new
     @portafolios = Portafolio.find_by(id: params[:id])
+    if current_user == @portafolios
+      @user = current_user
+      @portafolio = current_user.portafolios.new
+    else
+      redirect_to root_path, alert: 'No tiene acceso a esta pagina.'
+    end
   end
 
   # GET /portafolios/1/edit
@@ -31,7 +36,7 @@ class PortafoliosController < ApplicationController
 
     respond_to do |format|
       if @portafolio.save
-        format.html { redirect_to root_path, notice: 'Portafolio was successfully created.' }
+        format.html { redirect_to user_portafolio_path(current_user, @portafolio), notice: 'Portafolio was successfully created.' }
         format.json { render :show, status: :created, location: @portafolio }
       else
         format.html { redirect_to :back }
