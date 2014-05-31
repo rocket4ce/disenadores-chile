@@ -3,12 +3,10 @@ class UsersController < ApplicationController
   after_action :verify_authorized, except: [:show]
 
   def index
-    @users = User.all
-    if params[:search]
-      @users = User.search(params[:search]).order("created_at DESC")
-    else
-      @users = User.all.order('created_at DESC')
-    end
+    # @q = User.search(params[:q])
+    # @q.result(distinct: true)
+    @search = User.search(params[:q])
+    @users = @search.result(distinct: true)
     authorize @users
   end
 

@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'friendly_id'
 gem 'carrierwave'
 gem 'carrierwave-size-validator'
+gem "ransack", github: "activerecord-hackery/ransack"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]
