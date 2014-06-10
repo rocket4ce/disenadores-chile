@@ -12,6 +12,69 @@
   </head>
   <body>
     <header>
+          <nav class="primario">
+        <section class="cabecera contenedor-nav">
+            <span class="suscribete">
+              <section>
+                <a href="#">Inscripción Boletín</a>
+              </section>
+            </span>
+            <ul class="navegacion">
+              <li><a href="#">¿que es el cdp?</a></li>
+              <li><a href="#">boletin cdp</a></li>
+              <li><a href="#">colaborar con nosotros</a></li>
+              <% unless user_signed_in? %>
+                <li><%= link_to 'Ingresar', new_user_session_path %></li>
+                <li><%= link_to 'Registro', new_user_registration_path %></li>
+              <% end %>
+              <% if user_signed_in? %>
+                <% if current_user.admin? %>
+                  <li><%= link_to 'Arear de Administrador', users_path %></li>
+                <% end %>
+              <% end %>
+              <li><a href="#">contacto</a></li>
+            </ul>
+            <div class="buscar">
+            <section>
+                <form action="#">
+                  <input type="text" placeholder="BÚSQUEDA">
+                </form>
+            </section>
+            </div>
+        </section>
+      </nav>
+      <figure class="contenedor">
+        <div class="logo centrar">
+          <%= link_to image_tag("logo.png"), root_path, class: 'logo-home' %>
+        </div>
+        <div class="usuarios-nombre">
+          <% if user_signed_in? %>
+            <figure>
+              <% if @user.avatar? %>
+                <%= image_tag(@user.avatar_url) %>
+              <% end %>
+                <%= link_to @user.name, @user %>
+                <%= link_to 'Edit account', edit_user_registration_path %>
+                <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
+            </figure>
+          <% end %>
+        </div>
+      </figure>
+
+      <section class="nav-secundario">
+        <nav class="contenedor">
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Colegio</a></li>
+            <li><a href="#">Beneficios</a></li>
+            <li><a href="#">Instrumentos</a></li>
+            <li><a href="#">Comunidad</a></li>
+            <li><a href="#">Inscripcion</a></li>
+          </ul>
+        </nav>
+      </section>
+
+
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">

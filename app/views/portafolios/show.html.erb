@@ -1,18 +1,31 @@
+<div class="row">
 <p id="notice"><%= notice %></p>
+  <div class="large-3 columns">
+	<p>
+	  <strong>Titulo:</strong>
+	  <%= @portafolio.titulo %>
+	</p>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @portafolio.titulo %>
-</p>
-
-<p>
-  <strong>Descripcion:</strong>
-  <%= @portafolio.descripcion %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @portafolio.user.name %>
-</p>
-
-
+	<p>
+	  <strong>Descripcion:</strong>
+	  <%= @portafolio.descripcion %>
+	</p>
+  	
+  </div>
+  <div class="large-9 columns">
+  	<ul id="sortable">
+	  <% @imagenes.each do |p| %>
+	    <li id="imagen_<%= p.id %>">
+	     <%= image_tag p.imagen_url %>
+	      <% if current_user.id === @portafolio.user_id %>
+	        <%= link_to "Eliminar", user_portafolio_adjunto_path(current_user.slug, params[:id],p), {method: :delete} %>
+	      <% end %>
+	    </li>
+	  <% end %>
+	</ul>
+  </div>
+	<% if current_user.id === @portafolio.user_id %>
+		<%= link_to 'Show', user_portafolio_path(@portafolio.user, @portafolio.slug) %>
+		<%= link_to 'Edit', edit_user_portafolio_path(@portafolio.user, @portafolio.slug) %>
+	<% end %>
+</div>

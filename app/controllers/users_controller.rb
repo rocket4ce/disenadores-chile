@@ -10,11 +10,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @portafolios = @user.portafolios.all
     unless current_user.id == @user.id
       case current_user.pago && @user.pago
       when true
       when @user.pago? 
-        redirect_to root_path, :alert => "El usuario #{@user.name} no tiene permiso para que vean su portafolios"
+        unless current_user.admin?
+          redirect_to root_path, :alert => "El usuario #{@user.name} no tiene permiso para que vean su portafolios"
+        end
       when current_user.pago?
         redirect_to root_path, :alert => "Para poder ver los portafolios de otros tienes que estar estar al día con tus cuotas"
       end
@@ -27,7 +30,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(secure_params)
       redirect_to users_path, :notice => "User updated."
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      redirect_to users_path, :alert => "No puedes actualizar el usuario, recuerde que debe introduccir fecha de pago, cuando este activado el checkbox"
     end
   end
 
@@ -36,9 +39,9 @@ class UsersController < ApplicationController
     authorize user
     unless user == current_user
       user.destroy
-      redirect_to users_path, :notice => "User deleted."
+      redirect_to users_path, :notice => "Usuario eliminado."
     else
-      redirect_to users_path, :notice => "Can't delete yourself."
+      redirect_to users_path, :notice => "No puedes eliminarte a ti mismo."
     end
   end
 

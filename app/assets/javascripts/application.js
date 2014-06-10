@@ -17,4 +17,12 @@
 //= require_tree .
 $(function() {
   $(document).foundation();
+  // var marcado = $(".checkbox_2 input:checkbox").prop("checked") ? true : false;
+  // console.log(marcado);
+  // if (marcado == true) {
+  // 	$("#user_fechapago").prop('disabled', true);
+  // }
+  // else{
+  // 	$("#user_fechapago").prop('disabled', false);
+  // };
 });

@@ -2,4 +2,27 @@
 <p>Name: <%= @user.name if @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 
+<% if @portafolios.empty? %>
+	<h1>
+		crear un portafolios
+	</h1>
+<% end %>
+
+	<% @portafolios.each do |s| %>
+	<ul>
+		<li>
+			<%= link_to s.titulo, user_portafolio_path(s.user.slug, s.slug)  %>
+
+		</li>
+		<% if current_user === @user %>
+			<li>
+				<%= link_to 'Edit', edit_user_portafolio_path(s.user, s.slug) %>
+			</li>
+			<li>
+				<%= link_to 'Eliminar', user_portafolio_path(s.user, s.slug), {method: :delete} %>
+			</li>
+		<% end %>
+	</ul>
+	<% end %>
+
 

@@ -9,8 +9,10 @@
 	<td><%= link_to user.name, user %></td>	
 	<td><%= user.email %></td>	
     <td><%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %></td>	
-    <td><%= f.check_box(:pago) %></td>	
-    <td><%= f.date_field(:fechapago) %></td>	
+    <td class="checkbox_<%= user.id %>"><%= f.check_box(:pago) %></td>	
+    <td class="fecha_<%= user.id %>">
+    	<%= f.date_field(:fechapago) %>
+    </td>	
     <td><%= f.submit 'Actualizar', :class => 'button-xs' %></td>	
 <% end %>
 <td><%= link_to("Eliminar Usuario", user_path(user), :data => { :confirm => "Administrador estas seguro?" }, :method => :delete, :class => 'button-xs') unless user == current_user %></td>	

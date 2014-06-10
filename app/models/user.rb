@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  enum role: [:user, :vip, :admin, :perro]
+  enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
   def set_default_role
     self.role ||= :user
@@ -20,6 +20,15 @@ class User < ActiveRecord::Base
   validates :name, format: { with: /\A[0-9a-zA-Z]+\z/,
      message: "solo numeros y letras" }
   validates :avatar, file_size: { maximum: 5.megabytes.to_i }
+
+  validates :fechapago, presence: { if: 'pago.present?', message: "necesitas introducir fecha de pago" }
+  # def check_box_pago
+  #   unless self.pago === false
+  #     errors.add :base, "tienes que agregar fecha de pago"
+  #   end
+  # end
+
+  
 
   has_many :portafolios, dependent: :destroy
 

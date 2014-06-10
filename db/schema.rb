@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531165314) do
+ActiveRecord::Schema.define(version: 20140602043636) do
+
+  create_table "adjuntos", force: true do |t|
+    t.integer  "portafolio_id"
+    t.string   "imagen"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
