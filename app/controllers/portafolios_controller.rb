@@ -1,5 +1,5 @@
 class PortafoliosController < ApplicationController
-  before_action :set_portafolio, only: [:edit, :update]
+  before_action :set_portafolio, only: [:edit, :update, :show]
 
 
   def index
@@ -12,10 +12,15 @@ class PortafoliosController < ApplicationController
 
 
   def show
-    @portafolio = Portafolio.find(params[:id])
     # @portafolios = Portafolio.find(params[:id])
-    @user = @portafolio.user_id
+    # # @portafolios = Portafolio.find(params[:id])
+    # @user = @portafolio.user_id
+    # @cometarios
     @imagenes = @portafolio.adjuntos.all
+    @user = current_user
+    @portafolios = Portafolio.find(params[:id])
+    @cometarios
+    # @imagenes = @portafolios.uploads.order('position')
   end
 
 
@@ -62,12 +67,15 @@ class PortafoliosController < ApplicationController
     end
   end
 
-  def update
+
+def update
     respond_to do |format|
       if @portafolio.update(portafolio_params)
-        params[:adjuntos]['imagen'].each do |a|
-          @user = current_user
-          @imagenes = @portafolio.adjuntos.create!(:imagen => a, :portafolio_id => @portafolio.id, :user_id => @user.id)
+        unless params[:adjuntos].nil?
+         params[:adjuntos]['imagen'].each do |a|
+           @user = current_user
+           @imagenes = @portafolio.adjuntos.create!(:imagen => a, :portafolio_id => @portafolio.id, :user_id => @user.id)
+          end
         end
         format.html { redirect_to user_portafolio_path(current_user, @portafolio), notice: 'Portafolio was successfully updated.' }
         format.json { render :show, status: :ok, location: @portafolio }
@@ -77,6 +85,7 @@ class PortafoliosController < ApplicationController
       end
     end
   end
+
 
   def destroy
     @portafolio = Portafolio.find(params[:id])
@@ -96,6 +105,7 @@ class PortafoliosController < ApplicationController
     def set_portafolio
         if current_user.id === Portafolio.find(params[:id]).user_id
           @portafolio = current_user.portafolios.find(params[:id])
+          @comentarios = @portafolio.comentarios.all
         else
           redirect_to user_path(current_user), alert: 'No tienes permiso para editar'
         end

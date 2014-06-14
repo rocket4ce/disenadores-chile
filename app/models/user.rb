@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
     self.role ||= :user
     self.pago ||= false
   end
+  has_many :comentarios, :through => :portafolios
+  has_many :portafolios, dependent: :destroy
   validates :name, presence: true
   validates :name, length: {
      minimum: 3,
@@ -29,8 +31,6 @@ class User < ActiveRecord::Base
   # end
 
   
-
-  has_many :portafolios, dependent: :destroy
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]

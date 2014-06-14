@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602043636) do
+ActiveRecord::Schema.define(version: 20140613231503) do
 
   create_table "adjuntos", force: true do |t|
     t.integer  "portafolio_id"
     t.string   "imagen"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comentarios", force: true do |t|
+    t.text     "comentario"
+    t.integer  "portafolio_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

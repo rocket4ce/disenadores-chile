@@ -14,219 +14,219 @@
  *= require_self
  */
 
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
-@import "reset";
-@import "animate";
-@import "jeet/index";
-$color-menu-primario:#242628;
-$gris:#999999;
-$gris-oscuro:#666;
-$negro:#000;
-$azul-oscuro:#242f39;
-body{
-	font-family: 'Oswald', sans-serif;
-	font-weight: 300;
-}
-img{
-	max-width: 100%;
-}
-.centro{
-	text-align: center;
-}
-p{
-	font-size: 18px;
-	color: $gris-oscuro;
-	text-align: justify;
-}
-h1{
-	font-size: 28px;
-}
-h2{
-	font-size: 22px;
-	font-weight: 400;
-}
-input{
-	width: 100%;
-	outline: none;
-	border: none;
-	font-family: 'Oswald', sans-serif;
-	font-weight: 300;
-	text-transform: uppercase;
-}
-.logo{
-	@include col (3/16);
-}
-.contenedor-nav{
-	@include center(1100px);
-}
-.contenedor{
-	@include center(1260px);
-}
-.primario{
-	background:$color-menu-primario;
-	a{
-		color: $gris;
-		text-transform: uppercase;
-		font-size: 15px;
-	}
-	a:hover{
-		color: white;
-	}
-}
-a{
-	text-decoration: none;
-	transition: All 0.5s ease;
-  	-webkit-transition: All 0.5s ease;
-  	-moz-transition: All 0.5s ease;
-  	-o-transition: All 0.5s ease;
-}
-header{
-	margin-bottom: 60px;
-}
-.suscribete{
-	@include col(2/14);
-	text-align: center;
-	background: $negro;
-	section{
-		padding: 19px 0;
-		border-left: 1px $gris dotted; 
-		border-right:  1px $gris dotted; 
-	}
-}
-.navegacion{
-	@include col(10/14);
-	text-align: center;
-	padding: 19px 0;
-	li{
-		display: inline-block;
-		padding: 0 15px;
-		border-right: 1px solid $gris;
-	}
-	li:last-child{
-		border: none;
-	}
-}
-.buscar{
-	@include col(2/14);
-	text-align: center;
-	background: $negro;
-	section{
-		padding: 10px 0;
-		border-left: 1px $gris dotted; 
-		border-right:  1px $gris dotted; 
-	}
-	input{
-		background: transparent;
-		color: white;
-		padding: 5px 0;
-		font-size: 15px;
-		padding-left: 10px;
-	}
-}
-.centrar{
-	text-align: center;
-	padding: 20px 0;
-	.logo-home{
-		padding-left:40px;
-	}
-}
-.nav-secundario nav ul{
-	text-align: center;
-	border-bottom: 2px solid black;
-	border-top: 1px solid black;
-	padding: 10px;
-	li{
-		text-align: center;
-		display: inline-block;
-		position: relative;
-		a{
-			padding: 0 20px;
-			display:block;
-			font-size: 22px;
-			color: black;
-			font-weight: 400;
-			text-transform: uppercase;
-		}
-		a:hover{
-			color: $gris;
-		}
-	}
-	li:first-child::before{
-		content:" ";
-	}
-	li::before{
-		content:"/";
-		position: absolute;
-		left: -3px;
-		top: -2px;
-		color: $gris;
-		font-size: 24px;
-		font-weight: 300;
-	}
-}
-.slide{
-	@include col (1/1);
-	figure{
-		position: relative;
-		figcaption{
-			position: absolute;
-			width: 100%;
-			height: 100%;
-		}
-	}
-	h2{
-		color: white;
-		font-weight: 400;
-		font-size: 60px;
-		text-align: center;
-		margin-top: 150px;
-	}
-	.extracto{
-		font-size: 30px;
-		font-weight: 400;
-		color: white;
-		text-align: center;
-		margin: 20px 0;
-	}
-}
-.noticias {
-	margin-top: 20px;
-	.noti{
-		@include col (1/3);
-		span{
-			color: $gris-oscuro;
-			text-decoration: underline;
-			font-size: 18px;
-		}
-		figure{
-			position: relative;
-			.leermas{
-				position: absolute;
-				width: 100%;
-				text-align: center;
-				height: 100%;
-				background-color: rgba(0,0,0,.6);
-				opacity: 0;
-				a{
-					display: inline-block;
-					padding: 10px;
-					border: 3px solid white;
-					color: white;
-					text-transform: uppercase;
-					position: relative;
-					top: 40%;
-				}
-			}
-		}
-		figure:hover .leermas{
-			opacity: 1;
-		}
-	}
-}
-footer{
-	background-color: #003;
-	background-image: -webkit-linear-gradient(right, #1b1e24, #0d0f12);
-	background-image: -moz-linear-gradient(right, #1b1e24, #0d0f12);
-	background-image: -o-linear-gradient(right, #1b1e24, #0d0f12);
-	background-image: linear-gradient(to left, #1b1e24, #0d0f12);
-}
+// @import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
+// @import "reset";
+// @import "animate";
+// @import "jeet/index";
+// $color-menu-primario:#242628;
+// $gris:#999999;
+// $gris-oscuro:#666;
+// $negro:#000;
+// $azul-oscuro:#242f39;
+// body{
+// 	font-family: 'Oswald', sans-serif;
+// 	font-weight: 300;
+// }
+// img{
+// 	max-width: 100%;
+// }
+// .centro{
+// 	text-align: center;
+// }
+// p{
+// 	font-size: 18px;
+// 	color: $gris-oscuro;
+// 	text-align: justify;
+// }
+// h1{
+// 	font-size: 28px;
+// }
+// h2{
+// 	font-size: 22px;
+// 	font-weight: 400;
+// }
+// input{
+// 	width: 100%;
+// 	outline: none;
+// 	border: none;
+// 	font-family: 'Oswald', sans-serif;
+// 	font-weight: 300;
+// 	text-transform: uppercase;
+// }
+// .logo{
+// 	@include col (3/16);
+// }
+// .contenedor-nav{
+// 	@include center(1100px);
+// }
+// .contenedor{
+// 	@include center(1260px);
+// }
+// .primario{
+// 	background:$color-menu-primario;
+// 	a{
+// 		color: $gris;
+// 		text-transform: uppercase;
+// 		font-size: 15px;
+// 	}
+// 	a:hover{
+// 		color: white;
+// 	}
+// }
+// a{
+// 	text-decoration: none;
+// 	transition: All 0.5s ease;
+//   	-webkit-transition: All 0.5s ease;
+//   	-moz-transition: All 0.5s ease;
+//   	-o-transition: All 0.5s ease;
+// }
+// header{
+// 	margin-bottom: 60px;
+// }
+// .suscribete{
+// 	@include col(2/14);
+// 	text-align: center;
+// 	background: $negro;
+// 	section{
+// 		padding: 19px 0;
+// 		border-left: 1px $gris dotted; 
+// 		border-right:  1px $gris dotted; 
+// 	}
+// }
+// .navegacion{
+// 	@include col(10/14);
+// 	text-align: center;
+// 	padding: 19px 0;
+// 	li{
+// 		display: inline-block;
+// 		padding: 0 15px;
+// 		border-right: 1px solid $gris;
+// 	}
+// 	li:last-child{
+// 		border: none;
+// 	}
+// }
+// .buscar{
+// 	@include col(2/14);
+// 	text-align: center;
+// 	background: $negro;
+// 	section{
+// 		padding: 10px 0;
+// 		border-left: 1px $gris dotted; 
+// 		border-right:  1px $gris dotted; 
+// 	}
+// 	input{
+// 		background: transparent;
+// 		color: white;
+// 		padding: 5px 0;
+// 		font-size: 15px;
+// 		padding-left: 10px;
+// 	}
+// }
+// .centrar{
+// 	text-align: center;
+// 	padding: 20px 0;
+// 	.logo-home{
+// 		padding-left:40px;
+// 	}
+// }
+// .nav-secundario nav ul{
+// 	text-align: center;
+// 	border-bottom: 2px solid black;
+// 	border-top: 1px solid black;
+// 	padding: 10px;
+// 	li{
+// 		text-align: center;
+// 		display: inline-block;
+// 		position: relative;
+// 		a{
+// 			padding: 0 20px;
+// 			display:block;
+// 			font-size: 22px;
+// 			color: black;
+// 			font-weight: 400;
+// 			text-transform: uppercase;
+// 		}
+// 		a:hover{
+// 			color: $gris;
+// 		}
+// 	}
+// 	li:first-child::before{
+// 		content:" ";
+// 	}
+// 	li::before{
+// 		content:"/";
+// 		position: absolute;
+// 		left: -3px;
+// 		top: -2px;
+// 		color: $gris;
+// 		font-size: 24px;
+// 		font-weight: 300;
+// 	}
+// }
+// .slide{
+// 	@include col (1/1);
+// 	figure{
+// 		position: relative;
+// 		figcaption{
+// 			position: absolute;
+// 			width: 100%;
+// 			height: 100%;
+// 		}
+// 	}
+// 	h2{
+// 		color: white;
+// 		font-weight: 400;
+// 		font-size: 60px;
+// 		text-align: center;
+// 		margin-top: 150px;
+// 	}
+// 	.extracto{
+// 		font-size: 30px;
+// 		font-weight: 400;
+// 		color: white;
+// 		text-align: center;
+// 		margin: 20px 0;
+// 	}
+// }
+// .noticias {
+// 	margin-top: 20px;
+// 	.noti{
+// 		@include col (1/3);
+// 		span{
+// 			color: $gris-oscuro;
+// 			text-decoration: underline;
+// 			font-size: 18px;
+// 		}
+// 		figure{
+// 			position: relative;
+// 			.leermas{
+// 				position: absolute;
+// 				width: 100%;
+// 				text-align: center;
+// 				height: 100%;
+// 				background-color: rgba(0,0,0,.6);
+// 				opacity: 0;
+// 				a{
+// 					display: inline-block;
+// 					padding: 10px;
+// 					border: 3px solid white;
+// 					color: white;
+// 					text-transform: uppercase;
+// 					position: relative;
+// 					top: 40%;
+// 				}
+// 			}
+// 		}
+// 		figure:hover .leermas{
+// 			opacity: 1;
+// 		}
+// 	}
+// }
+// footer{
+// 	background-color: #003;
+// 	background-image: -webkit-linear-gradient(right, #1b1e24, #0d0f12);
+// 	background-image: -moz-linear-gradient(right, #1b1e24, #0d0f12);
+// 	background-image: -o-linear-gradient(right, #1b1e24, #0d0f12);
+// 	background-image: linear-gradient(to left, #1b1e24, #0d0f12);
+// }

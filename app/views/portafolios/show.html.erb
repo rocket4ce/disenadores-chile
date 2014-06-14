@@ -28,4 +28,29 @@
 		<%= link_to 'Show', user_portafolio_path(@portafolio.user, @portafolio.slug) %>
 		<%= link_to 'Edit', edit_user_portafolio_path(@portafolio.user, @portafolio.slug) %>
 	<% end %>
+
+<!-- desplegar comentarios -->
+<div class="columns">
+<h1>haz un comentarios</h1>
+<% if user_signed_in? %>
+   <%= simple_form_for ([@user, @portafolios, current_user.comentarios.new ]) do |f|%>
+    <%= f.input :comentario, as: :text  %> 
+    <%= f.submit 'Comentar', :class => 'button right' %>
+   <% end %>
+<% else %>
+<p>Tienes que Registrarte</p>
+<% end %>
+</div>
+
+<div class="columns">
+	<% @comentarios.each do |c| %>
+	 <p>
+	   <%= c.user.name %>
+	   <%= c.comentario %>
+	 </p> 
+	<% end %>
+</div>
+
+
+
 </div>
