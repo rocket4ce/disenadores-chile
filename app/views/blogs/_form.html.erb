@@ -1,0 +1,11 @@
+<%= simple_form_for(@blog) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :titulo %>
+    <%= f.input :cuerpo, as: :bootsy, editor_options: {html: true} %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

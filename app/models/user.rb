@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
     self.pago ||= false
   end
   has_many :comentarios, :through => :portafolios
+  has_many :blogs, dependent: :destroy
   has_many :portafolios, dependent: :destroy
   validates :name, presence: true
   validates :name, length: {

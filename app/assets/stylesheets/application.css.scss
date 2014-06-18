@@ -10,9 +10,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require font-awesome
+ *= require bootstrap
+ *= require bootsy
  *= require_tree .
  *= require_self
  */
+
+
+.wysihtml5-sandbox{
+	height:40em!important;
+}
+
 
 // @import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
 // @import "reset";

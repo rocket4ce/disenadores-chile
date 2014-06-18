@@ -21,6 +21,9 @@ gem 'carrierwave-size-validator'
 gem "ransack", github: "activerecord-hackery/ransack"
 gem "socialization"
 gem 'impressionist'
+gem 'font-awesome-rails'
+gem 'bootsy'
+gem 'bootstrap-sass', '~> 3.0.3.0'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]
