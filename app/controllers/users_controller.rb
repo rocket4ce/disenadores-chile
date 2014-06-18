@@ -1,6 +1,17 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-  after_action :verify_authorized, except: [:show]
+  after_action :verify_authorized, except: [:show, :follow]
+
+
+  def follow
+    @user = User.find(params[:id])
+     # => This assumes you have a variable current_user who is authenticated
+    if current_user.toggle_follow!(@user)
+      redirect_to user_path, :notice => "Lo Sigues"
+    else
+      redirect_to user_path, :alert => "Ya no lo Sigues"
+    end
+  end
 
   def index
     @search = User.search(params[:q])
@@ -10,6 +21,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @seguidores = @user.followers(User)
+    @siguiendo = @user.followees(User)
     @portafolios = @user.portafolios.all
     unless current_user.id == @user.id
       case current_user.pago && @user.pago

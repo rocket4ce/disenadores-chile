@@ -2,6 +2,30 @@
 <p>Name: <%= @user.name if @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 
+<% @seguidores.each do |s| %>
+		<li class="<%= s.id %>"><%=link_to s.name, controller: "users", action: "show", id: s.slug %></li>
+<% end %>
+
+<p><%= @user.name %> sigue a:
+<ul>
+	<% @siguiendo.each do |s| %>
+		<li class="<%= s.id %>"><%=link_to s.name, controller: "users", action: "show", id: s.slug %></li>
+	<% end %>
+</ul>
+ </p>
+
+
+<% if user_signed_in? %>
+	<% unless current_user === @user  %>
+		<% if current_user.follows?(@user)  %>
+			<%= link_to("unfollow", follow_user_path(@user), method: :post, class: "seguir") %>
+		<% else %>
+			<%= link_to("follow", follow_user_path(@user), method: :post, class: "seguir") %>
+		<% end %>
+	<% end %>
+<% end %>
+
+
 <% if @portafolios.empty? %>
 	<h1>
 		crear un portafolios

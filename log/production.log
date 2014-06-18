@@ -1,0 +1,759 @@
+I, [2014-06-14T00:04:57.756181 #9572]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-06-14 00:04:57 -0400
+I, [2014-06-14T00:04:57.768182 #9572]  INFO -- : Processing by HomeController#index as HTML
+E, [2014-06-14T00:04:57.805184 #9572] ERROR -- : SQLite3::SQLException: no such table: users: SELECT "users".* FROM "users"
+I, [2014-06-14T00:04:57.806184 #9572]  INFO -- :   Rendered home/index.html.erb within layouts/application (3.0ms)
+I, [2014-06-14T00:04:57.806184 #9572]  INFO -- : Completed 500 Internal Server Error in 38ms
+F, [2014-06-14T00:04:57.810184 #9572] FATAL -- : 
+ActionView::Template::Error (SQLite3::SQLException: no such table: users: SELECT "users".* FROM "users"):
+    1: <h3>Home</h3>
+    2: <ul>
+    3: 	<% @users.each do |f| %>
+    4: 		<li>
+    5: 			<%= link_to f.name, f %>
+    6: 			<br>
+  app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb__259338749_39103140'
+
+
+I, [2014-06-14T00:12:33.976276 #9572]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-06-14 00:12:33 -0400
+I, [2014-06-14T00:12:33.977276 #9572]  INFO -- : Processing by HomeController#index as HTML
+E, [2014-06-14T00:12:33.980276 #9572] ERROR -- : SQLite3::SQLException: no such table: users: SELECT "users".* FROM "users"
+I, [2014-06-14T00:12:33.982276 #9572]  INFO -- :   Rendered home/index.html.erb within layouts/application (3.0ms)
+I, [2014-06-14T00:12:33.982276 #9572]  INFO -- : Completed 500 Internal Server Error in 5ms
+F, [2014-06-14T00:12:33.986276 #9572] FATAL -- : 
+ActionView::Template::Error (SQLite3::SQLException: no such table: users: SELECT "users".* FROM "users"):
+    1: <h3>Home</h3>
+    2: <ul>
+    3: 	<% @users.each do |f| %>
+    4: 		<li>
+    5: 			<%= link_to f.name, f %>
+    6: 			<br>
+  app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb__259338749_39103140'
+
+
+I, [2014-06-14T00:16:12.475773 #8968]  INFO -- : Migrating to DeviseCreateUsers (20140529201141)
+I, [2014-06-14T00:16:12.519776 #8968]  INFO -- : Migrating to AddNameToUsers (20140529201150)
+I, [2014-06-14T00:16:12.527776 #8968]  INFO -- : Migrating to AddRoleToUsers (20140529201207)
+I, [2014-06-14T00:16:12.533776 #8968]  INFO -- : Migrating to CreateFriendlyIdSlugs (20140529222036)
+I, [2014-06-14T00:16:12.545777 #8968]  INFO -- : Migrating to AddSlugToUser (20140529222225)
+I, [2014-06-14T00:16:12.555778 #8968]  INFO -- : Migrating to AddPagoToUser (20140531070714)
+I, [2014-06-14T00:16:12.562778 #8968]  INFO -- : Migrating to AddFechadepagoToUser (20140531073616)
+I, [2014-06-14T00:16:12.570779 #8968]  INFO -- : Migrating to AddAvatarToUsers (20140531091024)
+I, [2014-06-14T00:16:12.579779 #8968]  INFO -- : Migrating to CreatePortafolios (20140531155216)
+I, [2014-06-14T00:16:12.587780 #8968]  INFO -- : Migrating to AddSlugToPortafolios (20140531165314)
+I, [2014-06-14T00:16:12.594780 #8968]  INFO -- : Migrating to CreateAdjuntos (20140602043636)
+I, [2014-06-14T00:16:12.605781 #8968]  INFO -- : Migrating to CreateComentarios (20140613231503)
+I, [2014-06-14T00:16:35.098067 #1380]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-06-14 00:16:35 -0400
+I, [2014-06-14T00:16:35.137069 #1380]  INFO -- : Processing by HomeController#index as HTML
+I, [2014-06-14T00:16:35.175071 #1380]  INFO -- :   Rendered home/index.html.erb within layouts/application (2.0ms)
+I, [2014-06-14T00:16:35.180072 #1380]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T00:16:35.180072 #1380]  INFO -- :   Rendered layouts/_navigation.html.erb (2.0ms)
+I, [2014-06-14T00:16:35.182072 #1380]  INFO -- :   Rendered layouts/_messages.html.erb (1.0ms)
+I, [2014-06-14T00:16:35.182072 #1380]  INFO -- : Completed 200 OK in 45ms (Views: 13.0ms | ActiveRecord: 1.0ms)
+I, [2014-06-14T00:16:35.215074 #1380]  INFO -- : Started GET "/stylesheets/application.css" for 127.0.0.1 at 2014-06-14 00:16:35 -0400
+F, [2014-06-14T00:16:35.217074 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:16:35.222074 #1380]  INFO -- : Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2014-06-14 00:16:35 -0400
+F, [2014-06-14T00:16:35.224074 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:16:35.227074 #1380]  INFO -- : Started GET "/javascripts/application.js" for 127.0.0.1 at 2014-06-14 00:16:35 -0400
+F, [2014-06-14T00:16:35.230075 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:16:46.863740 #1380]  INFO -- : Started GET "/usuario/registro/dejame_entrar" for 127.0.0.1 at 2014-06-14 00:16:46 -0400
+I, [2014-06-14T00:16:46.865740 #1380]  INFO -- : Processing by Devise::RegistrationsController#new as HTML
+I, [2014-06-14T00:16:46.934744 #1380]  INFO -- :   Rendered devise/registrations/new.html.erb within layouts/application (18.0ms)
+I, [2014-06-14T00:16:46.935744 #1380]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T00:16:46.935744 #1380]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T00:16:46.935744 #1380]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T00:16:46.935744 #1380]  INFO -- : Completed 200 OK in 70ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+I, [2014-06-14T00:16:46.961746 #1380]  INFO -- : Started GET "/javascripts/application.js" for 127.0.0.1 at 2014-06-14 00:16:46 -0400
+F, [2014-06-14T00:16:46.964746 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:16:46.965746 #1380]  INFO -- : Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2014-06-14 00:16:46 -0400
+F, [2014-06-14T00:16:46.968746 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:16:46.970746 #1380]  INFO -- : Started GET "/stylesheets/application.css" for 127.0.0.1 at 2014-06-14 00:16:46 -0400
+F, [2014-06-14T00:16:46.973746 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:16:59.744477 #1380]  INFO -- : Started POST "/usuario/registro" for 127.0.0.1 at 2014-06-14 00:16:59 -0400
+I, [2014-06-14T00:16:59.745477 #1380]  INFO -- : Processing by Devise::RegistrationsController#create as HTML
+I, [2014-06-14T00:16:59.746477 #1380]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"oXo7+zd4MgU4F8iIhT/SPX+NG8XrFn6Qb0DCxaKjbQo=", "user"=>{"name"=>"rocket4ce", "email"=>"rocket4ce@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+E, [2014-06-14T00:16:59.950489 #1380] ERROR -- : Binary data inserted for `string` type on column `encrypted_password`
+E, [2014-06-14T00:16:59.959489 #1380] ERROR -- : Binary data inserted for `string` type on column `current_sign_in_ip`
+E, [2014-06-14T00:16:59.959489 #1380] ERROR -- : Binary data inserted for `string` type on column `last_sign_in_ip`
+I, [2014-06-14T00:16:59.971490 #1380]  INFO -- : Redirected to http://localhost:3000/
+I, [2014-06-14T00:16:59.972490 #1380]  INFO -- : Completed 302 Found in 225ms (ActiveRecord: 11.0ms)
+I, [2014-06-14T00:16:59.985491 #1380]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-06-14 00:16:59 -0400
+I, [2014-06-14T00:16:59.986491 #1380]  INFO -- : Processing by HomeController#index as HTML
+I, [2014-06-14T00:16:59.988491 #1380]  INFO -- :   Rendered home/index.html.erb within layouts/application (0.0ms)
+I, [2014-06-14T00:16:59.989491 #1380]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T00:16:59.990491 #1380]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T00:16:59.990491 #1380]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T00:16:59.990491 #1380]  INFO -- : Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+I, [2014-06-14T00:17:00.017492 #1380]  INFO -- : Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2014-06-14 00:17:00 -0400
+F, [2014-06-14T00:17:00.022493 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:17:00.026493 #1380]  INFO -- : Started GET "/javascripts/application.js" for 127.0.0.1 at 2014-06-14 00:17:00 -0400
+F, [2014-06-14T00:17:00.029493 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:17:00.030493 #1380]  INFO -- : Started GET "/stylesheets/application.css" for 127.0.0.1 at 2014-06-14 00:17:00 -0400
+F, [2014-06-14T00:17:00.032493 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:17:05.834825 #1380]  INFO -- : Started GET "/usuario/rocket4ce" for 127.0.0.1 at 2014-06-14 00:17:05 -0400
+I, [2014-06-14T00:17:05.836825 #1380]  INFO -- : Processing by UsersController#show as HTML
+I, [2014-06-14T00:17:05.840825 #1380]  INFO -- :   Parameters: {"id"=>"rocket4ce"}
+I, [2014-06-14T00:17:05.889828 #1380]  INFO -- :   Rendered users/show.html.erb within layouts/application (2.0ms)
+I, [2014-06-14T00:17:05.890828 #1380]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T00:17:05.890828 #1380]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T00:17:05.892828 #1380]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T00:17:05.892828 #1380]  INFO -- : Completed 200 OK in 52ms (Views: 9.0ms | ActiveRecord: 3.0ms)
+I, [2014-06-14T00:17:05.921830 #1380]  INFO -- : Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2014-06-14 00:17:05 -0400
+F, [2014-06-14T00:17:05.924830 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:17:05.926830 #1380]  INFO -- : Started GET "/javascripts/application.js" for 127.0.0.1 at 2014-06-14 00:17:05 -0400
+F, [2014-06-14T00:17:05.929831 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:17:05.930831 #1380]  INFO -- : Started GET "/stylesheets/application.css" for 127.0.0.1 at 2014-06-14 00:17:05 -0400
+F, [2014-06-14T00:17:05.932831 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:17:18.385543 #1380]  INFO -- : Started GET "/usuario/rocket4ce/portafolios" for 127.0.0.1 at 2014-06-14 00:17:18 -0400
+F, [2014-06-14T00:17:18.387543 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/usuario/rocket4ce/portafolios"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:17:25.351941 #1380]  INFO -- : Started GET "/usuario/rocket4ce/portafolios/crear" for 127.0.0.1 at 2014-06-14 00:17:25 -0400
+I, [2014-06-14T00:17:25.353942 #1380]  INFO -- : Processing by PortafoliosController#new as HTML
+I, [2014-06-14T00:17:25.353942 #1380]  INFO -- :   Parameters: {"user_id"=>"rocket4ce"}
+I, [2014-06-14T00:17:25.355942 #1380]  INFO -- : Redirected to http://localhost:3000/
+I, [2014-06-14T00:17:25.355942 #1380]  INFO -- : Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+I, [2014-06-14T00:17:25.367942 #1380]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-06-14 00:17:25 -0400
+I, [2014-06-14T00:17:25.368942 #1380]  INFO -- : Processing by HomeController#index as HTML
+I, [2014-06-14T00:17:25.371943 #1380]  INFO -- :   Rendered home/index.html.erb within layouts/application (1.0ms)
+I, [2014-06-14T00:17:25.372943 #1380]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T00:17:25.372943 #1380]  INFO -- :   Rendered layouts/_navigation.html.erb (0.0ms)
+I, [2014-06-14T00:17:25.373943 #1380]  INFO -- :   Rendered layouts/_messages.html.erb (1.0ms)
+I, [2014-06-14T00:17:25.373943 #1380]  INFO -- : Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+I, [2014-06-14T00:17:25.406945 #1380]  INFO -- : Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2014-06-14 00:17:25 -0400
+F, [2014-06-14T00:17:25.408945 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:17:25.410945 #1380]  INFO -- : Started GET "/stylesheets/application.css" for 127.0.0.1 at 2014-06-14 00:17:25 -0400
+F, [2014-06-14T00:17:25.412945 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:17:25.416945 #1380]  INFO -- : Started GET "/javascripts/application.js" for 127.0.0.1 at 2014-06-14 00:17:25 -0400
+F, [2014-06-14T00:17:25.418945 #1380] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:19:08.550844 #1512]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-06-14 00:19:08 -0400
+I, [2014-06-14T00:19:08.561845 #1512]  INFO -- : Processing by HomeController#index as HTML
+I, [2014-06-14T00:19:08.604847 #1512]  INFO -- :   Rendered home/index.html.erb within layouts/application (2.0ms)
+I, [2014-06-14T00:19:08.609847 #1512]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T00:19:08.609847 #1512]  INFO -- :   Rendered layouts/_navigation.html.erb (2.0ms)
+I, [2014-06-14T00:19:08.611848 #1512]  INFO -- :   Rendered layouts/_messages.html.erb (1.0ms)
+I, [2014-06-14T00:19:08.611848 #1512]  INFO -- : Completed 200 OK in 49ms (Views: 13.0ms | ActiveRecord: 2.0ms)
+I, [2014-06-14T00:19:08.647850 #1512]  INFO -- : Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2014-06-14 00:19:08 -0400
+F, [2014-06-14T00:19:08.650850 #1512] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:19:08.653850 #1512]  INFO -- : Started GET "/stylesheets/application.css" for 127.0.0.1 at 2014-06-14 00:19:08 -0400
+F, [2014-06-14T00:19:08.655850 #1512] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:19:08.657850 #1512]  INFO -- : Started GET "/javascripts/application.js" for 127.0.0.1 at 2014-06-14 00:19:08 -0400
+F, [2014-06-14T00:19:08.659850 #1512] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2014-06-14T00:29:31.071450 #4108]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-06-14 00:29:31 -0400
+I, [2014-06-14T00:29:31.083451 #4108]  INFO -- : Processing by HomeController#index as HTML
+I, [2014-06-14T00:29:31.127453 #4108]  INFO -- :   Rendered home/index.html.erb within layouts/application (2.0ms)
+I, [2014-06-14T00:29:44.497218 #4108]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T00:29:44.497218 #4108]  INFO -- :   Rendered layouts/_navigation.html.erb (2.0ms)
+I, [2014-06-14T00:29:44.499218 #4108]  INFO -- :   Rendered layouts/_messages.html.erb (1.0ms)
+I, [2014-06-14T00:29:44.499218 #4108]  INFO -- : Completed 200 OK in 13416ms (Views: 13378.8ms | ActiveRecord: 2.0ms)
+I, [2014-06-14T00:29:44.538220 #4108]  INFO -- : Started GET "/assets/vendor/modernizr-ed342bd9f8abe3570e9dbf16dc44a828.js" for 127.0.0.1 at 2014-06-14 00:29:44 -0400
+I, [2014-06-14T00:29:44.543221 #4108]  INFO -- : Started GET "/assets/application-b62f678ad440b6343de0c9ad58f44854.css" for 127.0.0.1 at 2014-06-14 00:29:44 -0400
+I, [2014-06-14T00:29:44.588223 #4108]  INFO -- : Started GET "/assets/application-a8344feba94fd64a9ab95a3b178b597e.js" for 127.0.0.1 at 2014-06-14 00:29:44 -0400
+I, [2014-06-14T00:38:58.577910 #10104]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-06-14 00:38:58 -0400
+I, [2014-06-14T00:38:58.613912 #10104]  INFO -- : Processing by HomeController#index as HTML
+I, [2014-06-14T00:38:58.655914 #10104]  INFO -- :   Rendered home/index.html.erb within layouts/application (2.0ms)
+I, [2014-06-14T00:38:58.702917 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T00:38:58.702917 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (2.0ms)
+I, [2014-06-14T00:38:58.704917 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (1.0ms)
+I, [2014-06-14T00:38:58.704917 #10104]  INFO -- : Completed 200 OK in 91ms (Views: 55.0ms | ActiveRecord: 2.0ms)
+I, [2014-06-14T00:43:36.772822 #10104]  INFO -- : Started GET "/usuario" for 127.0.0.1 at 2014-06-14 00:43:36 -0400
+I, [2014-06-14T00:43:36.774822 #10104]  INFO -- : Processing by UsersController#index as HTML
+I, [2014-06-14T00:43:36.788822 #10104]  INFO -- :   Rendered users/_user.html.erb (3.0ms)
+I, [2014-06-14T00:43:36.788822 #10104]  INFO -- :   Rendered users/index.html.erb within layouts/application (8.0ms)
+I, [2014-06-14T00:43:36.821824 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T00:43:36.821824 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (3.0ms)
+I, [2014-06-14T00:43:36.823824 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T00:43:36.823824 #10104]  INFO -- : Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 1.0ms)
+I, [2014-06-14T00:44:36.414233 #10104]  INFO -- : Started GET "/usuario" for 127.0.0.1 at 2014-06-14 00:44:36 -0400
+I, [2014-06-14T00:44:36.415233 #10104]  INFO -- : Processing by UsersController#index as HTML
+I, [2014-06-14T00:44:36.423233 #10104]  INFO -- :   Rendered users/_user.html.erb (1.0ms)
+I, [2014-06-14T00:44:36.423233 #10104]  INFO -- :   Rendered users/index.html.erb within layouts/application (5.0ms)
+I, [2014-06-14T00:44:36.427234 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T00:44:36.428234 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T00:44:36.428234 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T00:44:36.428234 #10104]  INFO -- : Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 2.0ms)
+I, [2014-06-14T00:44:39.541412 #10104]  INFO -- : Started GET "/usuario/registro/edit" for 127.0.0.1 at 2014-06-14 00:44:39 -0400
+I, [2014-06-14T00:44:39.543412 #10104]  INFO -- : Processing by Devise::RegistrationsController#edit as HTML
+I, [2014-06-14T00:44:39.574414 #10104]  INFO -- :   Rendered devise/registrations/edit.html.erb within layouts/application (21.0ms)
+I, [2014-06-14T00:44:39.579414 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T00:44:39.579414 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T00:44:39.579414 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T00:44:39.579414 #10104]  INFO -- : Completed 200 OK in 36ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+I, [2014-06-14T00:44:40.702478 #10104]  INFO -- : Started GET "/usuario" for 127.0.0.1 at 2014-06-14 00:44:40 -0400
+I, [2014-06-14T00:44:40.704478 #10104]  INFO -- : Processing by UsersController#index as HTML
+I, [2014-06-14T00:44:40.712479 #10104]  INFO -- :   Rendered users/_user.html.erb (2.0ms)
+I, [2014-06-14T00:44:40.712479 #10104]  INFO -- :   Rendered users/index.html.erb within layouts/application (5.0ms)
+I, [2014-06-14T00:44:40.717479 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T00:44:40.717479 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (0.0ms)
+I, [2014-06-14T00:44:40.718479 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (1.0ms)
+I, [2014-06-14T00:44:40.718479 #10104]  INFO -- : Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+I, [2014-06-14T00:45:59.771001 #10104]  INFO -- : Started GET "/usuario?utf8=%E2%9C%93&q%5Bname_cont%5D=&q%5Bpago_true%5D=0&q%5Bpago_true%5D=1&commit=Buscar" for 127.0.0.1 at 2014-06-14 00:45:59 -0400
+I, [2014-06-14T00:45:59.772001 #10104]  INFO -- : Processing by UsersController#index as HTML
+I, [2014-06-14T00:45:59.772001 #10104]  INFO -- :   Parameters: {"utf8"=>"✓", "q"=>{"name_cont"=>"", "pago_true"=>"1"}, "commit"=>"Buscar"}
+I, [2014-06-14T00:45:59.784001 #10104]  INFO -- :   Rendered users/index.html.erb within layouts/application (8.0ms)
+I, [2014-06-14T00:45:59.788002 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T00:45:59.789002 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T00:45:59.789002 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T00:45:59.789002 #10104]  INFO -- : Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 2.0ms)
+I, [2014-06-14T00:46:02.774172 #10104]  INFO -- : Started GET "/usuario" for 127.0.0.1 at 2014-06-14 00:46:02 -0400
+I, [2014-06-14T00:46:02.775172 #10104]  INFO -- : Processing by UsersController#index as HTML
+I, [2014-06-14T00:46:02.784173 #10104]  INFO -- :   Rendered users/_user.html.erb (2.0ms)
+I, [2014-06-14T00:46:02.784173 #10104]  INFO -- :   Rendered users/index.html.erb within layouts/application (6.0ms)
+I, [2014-06-14T00:46:02.789173 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T00:46:02.789173 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T00:46:02.789173 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T00:46:02.789173 #10104]  INFO -- : Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 1.0ms)
+I, [2014-06-14T00:46:04.943296 #10104]  INFO -- : Started GET "/usuario/rocket4ce" for 127.0.0.1 at 2014-06-14 00:46:04 -0400
+I, [2014-06-14T00:46:04.944296 #10104]  INFO -- : Processing by UsersController#show as HTML
+I, [2014-06-14T00:46:04.944296 #10104]  INFO -- :   Parameters: {"id"=>"rocket4ce"}
+I, [2014-06-14T00:46:04.963298 #10104]  INFO -- :   Rendered users/show.html.erb within layouts/application (3.0ms)
+I, [2014-06-14T00:46:04.969298 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T00:46:04.969298 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T00:46:04.969298 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T00:46:04.970298 #10104]  INFO -- : Completed 200 OK in 25ms (Views: 10.0ms | ActiveRecord: 1.0ms)
+I, [2014-06-14T01:07:44.176608 #10104]  INFO -- : Started GET "/usuario" for 127.0.0.1 at 2014-06-14 01:07:44 -0400
+I, [2014-06-14T01:07:44.178608 #10104]  INFO -- : Processing by UsersController#index as HTML
+I, [2014-06-14T01:07:44.186609 #10104]  INFO -- :   Rendered users/_user.html.erb (2.0ms)
+I, [2014-06-14T01:07:44.187609 #10104]  INFO -- :   Rendered users/index.html.erb within layouts/application (7.0ms)
+I, [2014-06-14T01:07:44.191609 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T01:07:44.192609 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T01:07:44.192609 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T01:07:44.192609 #10104]  INFO -- : Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+I, [2014-06-14T01:07:44.229611 #10104]  INFO -- : Started GET "/assets/vendor/modernizr-ed342bd9f8abe3570e9dbf16dc44a828.js" for 127.0.0.1 at 2014-06-14 01:07:44 -0400
+I, [2014-06-14T01:07:44.234612 #10104]  INFO -- : Started GET "/assets/application-a8344feba94fd64a9ab95a3b178b597e.js" for 127.0.0.1 at 2014-06-14 01:07:44 -0400
+I, [2014-06-14T01:07:44.263613 #10104]  INFO -- : Started GET "/assets/application-b62f678ad440b6343de0c9ad58f44854.css" for 127.0.0.1 at 2014-06-14 01:07:44 -0400
+I, [2014-06-14T01:07:44.369619 #10104]  INFO -- : Started GET "/usuario" for 127.0.0.1 at 2014-06-14 01:07:44 -0400
+I, [2014-06-14T01:07:44.370619 #10104]  INFO -- : Processing by UsersController#index as HTML
+I, [2014-06-14T01:07:44.377620 #10104]  INFO -- :   Rendered users/_user.html.erb (2.0ms)
+I, [2014-06-14T01:07:44.377620 #10104]  INFO -- :   Rendered users/index.html.erb within layouts/application (5.0ms)
+I, [2014-06-14T01:07:44.382620 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T01:07:44.382620 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (0.0ms)
+I, [2014-06-14T01:07:44.382620 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T01:07:44.383620 #10104]  INFO -- : Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+I, [2014-06-14T01:07:44.433623 #10104]  INFO -- : Started GET "/assets/application-a8344feba94fd64a9ab95a3b178b597e.js" for 127.0.0.1 at 2014-06-14 01:07:44 -0400
+I, [2014-06-14T01:07:44.435623 #10104]  INFO -- : Started GET "/assets/application-b62f678ad440b6343de0c9ad58f44854.css" for 127.0.0.1 at 2014-06-14 01:07:44 -0400
+I, [2014-06-14T01:07:44.438623 #10104]  INFO -- : Started GET "/assets/vendor/modernizr-ed342bd9f8abe3570e9dbf16dc44a828.js" for 127.0.0.1 at 2014-06-14 01:07:44 -0400
+I, [2014-06-14T01:07:46.831760 #10104]  INFO -- : Started GET "/usuario/rocket4ce" for 127.0.0.1 at 2014-06-14 01:07:46 -0400
+I, [2014-06-14T01:07:46.832760 #10104]  INFO -- : Processing by UsersController#show as HTML
+I, [2014-06-14T01:07:46.832760 #10104]  INFO -- :   Parameters: {"id"=>"rocket4ce"}
+I, [2014-06-14T01:07:46.836760 #10104]  INFO -- :   Rendered users/show.html.erb within layouts/application (1.0ms)
+I, [2014-06-14T01:07:46.842761 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T01:07:46.842761 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T01:07:46.842761 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T01:07:46.843761 #10104]  INFO -- : Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 1.0ms)
+I, [2014-06-14T01:07:49.559916 #10104]  INFO -- : Started PATCH "/usuario/rocket4ce" for 127.0.0.1 at 2014-06-14 01:07:49 -0400
+I, [2014-06-14T01:07:49.560916 #10104]  INFO -- : Processing by UsersController#update as HTML
+I, [2014-06-14T01:07:49.560916 #10104]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"oXo7+zd4MgU4F8iIhT/SPX+NG8XrFn6Qb0DCxaKjbQo=", "user"=>{"role"=>"admin", "pago"=>"0", "fechapago"=>""}, "commit"=>"Actualizar", "id"=>"rocket4ce"}
+I, [2014-06-14T01:07:49.565917 #10104]  INFO -- : Redirected to http://localhost:3000/usuario
+I, [2014-06-14T01:07:49.565917 #10104]  INFO -- : Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+I, [2014-06-14T01:07:49.577917 #10104]  INFO -- : Started GET "/usuario" for 127.0.0.1 at 2014-06-14 01:07:49 -0400
+I, [2014-06-14T01:07:49.578917 #10104]  INFO -- : Processing by UsersController#index as HTML
+I, [2014-06-14T01:07:49.585918 #10104]  INFO -- :   Rendered users/_user.html.erb (2.0ms)
+I, [2014-06-14T01:07:49.585918 #10104]  INFO -- :   Rendered users/index.html.erb within layouts/application (5.0ms)
+I, [2014-06-14T01:07:49.590918 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (1.0ms)
+I, [2014-06-14T01:07:49.590918 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T01:07:49.590918 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T01:07:49.590918 #10104]  INFO -- : Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+I, [2014-06-14T01:07:49.621920 #10104]  INFO -- : Started GET "/assets/application-a8344feba94fd64a9ab95a3b178b597e.js" for 127.0.0.1 at 2014-06-14 01:07:49 -0400
+I, [2014-06-14T01:07:49.624920 #10104]  INFO -- : Started GET "/assets/vendor/modernizr-ed342bd9f8abe3570e9dbf16dc44a828.js" for 127.0.0.1 at 2014-06-14 01:07:49 -0400
+I, [2014-06-14T01:07:49.626920 #10104]  INFO -- : Started GET "/assets/application-b62f678ad440b6343de0c9ad58f44854.css" for 127.0.0.1 at 2014-06-14 01:07:49 -0400
+I, [2014-06-14T01:07:52.520086 #10104]  INFO -- : Started PATCH "/usuario/rocket4ce" for 127.0.0.1 at 2014-06-14 01:07:52 -0400
+I, [2014-06-14T01:07:52.521086 #10104]  INFO -- : Processing by UsersController#update as HTML
+I, [2014-06-14T01:07:52.521086 #10104]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"oXo7+zd4MgU4F8iIhT/SPX+NG8XrFn6Qb0DCxaKjbQo=", "user"=>{"role"=>"admin", "pago"=>"1", "fechapago"=>""}, "commit"=>"Actualizar", "id"=>"rocket4ce"}
+I, [2014-06-14T01:07:52.525086 #10104]  INFO -- : Redirected to http://localhost:3000/usuario
+I, [2014-06-14T01:07:52.525086 #10104]  INFO -- : Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+I, [2014-06-14T01:07:52.537087 #10104]  INFO -- : Started GET "/usuario" for 127.0.0.1 at 2014-06-14 01:07:52 -0400
+I, [2014-06-14T01:07:52.538087 #10104]  INFO -- : Processing by UsersController#index as HTML
+I, [2014-06-14T01:07:52.544087 #10104]  INFO -- :   Rendered users/_user.html.erb (1.0ms)
+I, [2014-06-14T01:07:52.544087 #10104]  INFO -- :   Rendered users/index.html.erb within layouts/application (4.0ms)
+I, [2014-06-14T01:07:52.549087 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T01:07:52.549087 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (1.0ms)
+I, [2014-06-14T01:07:52.549087 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T01:07:52.549087 #10104]  INFO -- : Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+I, [2014-06-14T01:07:52.575089 #10104]  INFO -- : Started GET "/assets/application-a8344feba94fd64a9ab95a3b178b597e.js" for 127.0.0.1 at 2014-06-14 01:07:52 -0400
+I, [2014-06-14T01:07:52.580089 #10104]  INFO -- : Started GET "/assets/vendor/modernizr-ed342bd9f8abe3570e9dbf16dc44a828.js" for 127.0.0.1 at 2014-06-14 01:07:52 -0400
+I, [2014-06-14T01:07:52.583089 #10104]  INFO -- : Started GET "/assets/application-b62f678ad440b6343de0c9ad58f44854.css" for 127.0.0.1 at 2014-06-14 01:07:52 -0400
+I, [2014-06-14T01:07:57.085347 #10104]  INFO -- : Started PATCH "/usuario/rocket4ce" for 127.0.0.1 at 2014-06-14 01:07:57 -0400
+I, [2014-06-14T01:07:57.086347 #10104]  INFO -- : Processing by UsersController#update as HTML
+I, [2014-06-14T01:07:57.086347 #10104]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"oXo7+zd4MgU4F8iIhT/SPX+NG8XrFn6Qb0DCxaKjbQo=", "user"=>{"role"=>"admin", "pago"=>"1", "fechapago"=>"2014-06-11"}, "commit"=>"Actualizar", "id"=>"rocket4ce"}
+I, [2014-06-14T01:07:57.096347 #10104]  INFO -- : Redirected to http://localhost:3000/usuario
+I, [2014-06-14T01:07:57.096347 #10104]  INFO -- : Completed 302 Found in 10ms (ActiveRecord: 5.0ms)
+I, [2014-06-14T01:07:57.118349 #10104]  INFO -- : Started GET "/usuario" for 127.0.0.1 at 2014-06-14 01:07:57 -0400
+I, [2014-06-14T01:07:57.119349 #10104]  INFO -- : Processing by UsersController#index as HTML
+I, [2014-06-14T01:07:57.126349 #10104]  INFO -- :   Rendered users/_user.html.erb (2.0ms)
+I, [2014-06-14T01:07:57.126349 #10104]  INFO -- :   Rendered users/index.html.erb within layouts/application (5.0ms)
+I, [2014-06-14T01:07:57.131349 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T01:07:57.131349 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (0.0ms)
+I, [2014-06-14T01:07:57.132349 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (1.0ms)
+I, [2014-06-14T01:07:57.132349 #10104]  INFO -- : Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+I, [2014-06-14T01:07:57.155351 #10104]  INFO -- : Started GET "/assets/vendor/modernizr-ed342bd9f8abe3570e9dbf16dc44a828.js" for 127.0.0.1 at 2014-06-14 01:07:57 -0400
+I, [2014-06-14T01:07:57.157351 #10104]  INFO -- : Started GET "/assets/application-a8344feba94fd64a9ab95a3b178b597e.js" for 127.0.0.1 at 2014-06-14 01:07:57 -0400
+I, [2014-06-14T01:07:57.164351 #10104]  INFO -- : Started GET "/assets/application-b62f678ad440b6343de0c9ad58f44854.css" for 127.0.0.1 at 2014-06-14 01:07:57 -0400
+I, [2014-06-14T01:08:04.357763 #10104]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-06-14 01:08:04 -0400
+I, [2014-06-14T01:08:04.358763 #10104]  INFO -- : Processing by HomeController#index as HTML
+I, [2014-06-14T01:08:04.363763 #10104]  INFO -- :   Rendered home/index.html.erb within layouts/application (1.0ms)
+I, [2014-06-14T01:08:04.368763 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T01:08:04.368763 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (0.0ms)
+I, [2014-06-14T01:08:04.368763 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T01:08:04.369763 #10104]  INFO -- : Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+I, [2014-06-14T01:08:05.632836 #10104]  INFO -- : Started GET "/usuario/rocket4ce" for 127.0.0.1 at 2014-06-14 01:08:05 -0400
+I, [2014-06-14T01:08:05.633836 #10104]  INFO -- : Processing by UsersController#show as HTML
+I, [2014-06-14T01:08:05.633836 #10104]  INFO -- :   Parameters: {"id"=>"rocket4ce"}
+I, [2014-06-14T01:08:05.636836 #10104]  INFO -- :   Rendered users/show.html.erb within layouts/application (0.0ms)
+I, [2014-06-14T01:08:05.641836 #10104]  INFO -- :   Rendered layouts/_navigation_links.html.erb (0.0ms)
+I, [2014-06-14T01:08:05.641836 #10104]  INFO -- :   Rendered layouts/_navigation.html.erb (0.0ms)
+I, [2014-06-14T01:08:05.642836 #10104]  INFO -- :   Rendered layouts/_messages.html.erb (0.0ms)
+I, [2014-06-14T01:08:05.642836 #10104]  INFO -- : Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms)

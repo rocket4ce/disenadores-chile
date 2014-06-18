@@ -13,7 +13,7 @@
   	
   </div>
   <div class="large-9 columns">
-  	<ul id="sortable">
+  	<ul <% if current_user.id === @portafolio.user_id %>id="sortable"  data-update-url="<%= sort_user_portafolios_url %>"<% end %>>
 	  <% @imagenes.each do |p| %>
 	    <li id="imagen_<%= p.id %>">
 	     <%= image_tag p.imagen_url %>

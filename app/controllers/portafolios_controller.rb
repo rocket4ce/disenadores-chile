@@ -1,6 +1,6 @@
 class PortafoliosController < ApplicationController
   before_action :set_portafolio, only: [:edit, :update, :show]
-
+  impressionist :actions=>[:show,:index]
 
   def index
     if current_user.pago
@@ -16,7 +16,7 @@ class PortafoliosController < ApplicationController
     # # @portafolios = Portafolio.find(params[:id])
     # @user = @portafolio.user_id
     # @cometarios
-    @imagenes = @portafolio.adjuntos.all
+    @imagenes = @portafolio.adjuntos.order('position')
     @user = current_user
     @portafolios = Portafolio.find(params[:id])
     @cometarios
@@ -99,6 +99,15 @@ def update
       redirect_to user_path(current_user), alert: 'No puedes eliminar otros protafolios'
     end
   end
+
+  def sort
+    params[:imagen].each_with_index do |id, index|
+        imagen = Adjunto.find(id)
+        imagen.update_attribute(:position, index) if imagen
+    end
+    render nothing: true
+  end
+
 
   private
 
