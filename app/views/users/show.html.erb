@@ -1,52 +1,72 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
-
-<% @seguidores.each do |s| %>
-		<li class="<%= s.id %>"><%=link_to s.name, controller: "users", action: "show", id: s.slug %></li>
-<% end %>
-
-<p><%= @user.name %> sigue a:
-<ul>
-	<% @siguiendo.each do |s| %>
-		<li class="<%= s.id %>"><%=link_to s.name, controller: "users", action: "show", id: s.slug %></li>
-	<% end %>
-</ul>
- </p>
-
-
-<% if user_signed_in? %>
-	<% unless current_user === @user  %>
-		<% if current_user.follows?(@user)  %>
-			<%= link_to("unfollow", follow_user_path(@user), method: :post, class: "seguir") %>
-		<% else %>
-			<%= link_to("follow", follow_user_path(@user), method: :post, class: "seguir") %>
-		<% end %>
-	<% end %>
-<% end %>
-
-
-<% if @portafolios.empty? %>
-	<h1>
-		crear un portafolios
-	</h1>
-<% end %>
-
-	<% @portafolios.each do |s| %>
-	<ul>
-		<li>
-			<%= link_to s.titulo, user_portafolio_path(s.user.slug, s.slug)  %>
-
-		</li>
-		<% if current_user === @user %>
-			<li>
-				<%= link_to 'Edit', edit_user_portafolio_path(s.user, s.slug) %>
-			</li>
-			<li>
-				<%= link_to 'Eliminar', user_portafolio_path(s.user, s.slug), {method: :delete} %>
-			</li>
-		<% end %>
-	</ul>
-	<% end %>
-
-
+<div>
+  <div class="large-4 small-12 columns"> <img src="http://placehold.it/500x500&amp;text=Logo">
+    <div class="hide-for-small panel">
+      <h3><%= @user.name if @user.name %></h3>
+      <h5 class="subheader"><%= @user.email if @user.email %></h5>
+      <hr>
+      <% @seguidores.each do |s| %>
+      <h5>Personas que me siguen</h5>
+      <ul>
+        <li class="<%= s.id %>"><%=link_to s.name, controller: "users", action: "show", id: s.slug %></li>
+      </ul>
+      <% end %>
+      <h5>Mis amigos</h5>
+      <ul>
+        <% @siguiendo.each do |s| %>
+        <li class="<%= s.id %>"><%=link_to s.name, controller: "users", action: "show", id: s.slug %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% if user_signed_in? %>
+    <% unless current_user === @user  %>
+    <a href="#">
+    <div class="panel callout radius">
+      <h6>
+        <% if current_user.follows?(@user)  %>
+        <%= link_to("Dejar de Seguir", follow_user_path(@user), method: :post, class: "seguir") %>
+        <% else %>
+        <%= link_to("Seguir", follow_user_path(@user), method: :post, class: "seguir") %>
+        <% end %>
+      </h6>
+    </div>
+    </a>
+    <% end %>
+    <% end %>
+  </div>
+  <div class="large-8 columns">
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel">
+          <div class="row">
+            <% unless @user.pago? %>
+            <div class="large-10 small-6 columns"> <strong>Te Recordamos que:</strong>
+              <hr>
+              <b> Para poder empezar a subir portafolios, puedes hacer tu pago <a href="#">acá</a> </b> </div>
+            <% end %>
+            <% if @portafolios.empty? && @user.pago? && current_user.id == @user.id %>
+            <div> <strong>Empieza a subir tus Proyectos</strong>
+              <hr>
+              <div class="columns"> <%= link_to 'Crear un Portafolio', new_user_portafolio_path(current_user.slug), class: "button expand" %> </div>
+            </div>
+            <% end %>
+            <div class="row">
+              <% @portafolios.each do |s| %>
+              <div class="large-4 small-6 columns"> <img src="http://placehold.it/1000x1000&amp;text=Thumbnail">
+                <div class="panel">
+                  <h5><%= link_to s.titulo, user_portafolio_path(s.user.slug, s.slug)  %></h5>
+                  <% if current_user === @user %>
+                  <ul>
+                    <li> <%= link_to 'Edit', edit_user_portafolio_path(s.user, s.slug) %> </li>
+                    <li> <%= link_to 'Eliminar', user_portafolio_path(s.user, s.slug), {method: :delete} %> </li>
+                  </ul>
+                  <% end %>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

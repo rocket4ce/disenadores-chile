@@ -1,11 +1,4 @@
 <%= form_for(user) do |f| %>
-	<td width="50">
-	<% if user.avatar? %>
-		<%= image_tag(user.avatar_url) %>
-	<% else %>
-		<%= f.file_field :avatar %>
-	<% end %>
-	</td>
 	<td><%= link_to user.name, user %></td>	
 	<td><%= user.email %></td>	
     <td><%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %></td>	

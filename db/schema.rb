@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618110643) do
+ActiveRecord::Schema.define(version: 20140618175511) do
 
   create_table "adjuntos", force: true do |t|
     t.integer  "portafolio_id"
@@ -126,6 +126,28 @@ ActiveRecord::Schema.define(version: 20140618110643) do
   add_index "mentions", ["mentionable_id", "mentionable_type"], name: "fk_mentionables"
   add_index "mentions", ["mentioner_id", "mentioner_type"], name: "fk_mentions"
 
+  create_table "perfiles", force: true do |t|
+    t.integer  "user_id"
+    t.string   "nombre"
+    t.string   "apellidos"
+    t.string   "ocupacion"
+    t.string   "compania"
+    t.string   "web"
+    t.string   "tw"
+    t.string   "face"
+    t.string   "dribble"
+    t.string   "linkedin"
+    t.string   "vimeo"
+    t.string   "flickr"
+    t.string   "youtube"
+    t.string   "pinterest"
+    t.string   "tumblr"
+    t.string   "google"
+    t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "portafolios", force: true do |t|
     t.string   "titulo"
     t.text     "descripcion"
@@ -153,7 +175,6 @@ ActiveRecord::Schema.define(version: 20140618110643) do
     t.string   "slug"
     t.boolean  "pago"
     t.date     "fechapago"
-    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

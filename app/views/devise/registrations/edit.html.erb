@@ -12,18 +12,6 @@
     <% else %>
       <p>chao</p>
     <% end %>
-       <p>
-        <label>My Avatar</label>
-        <%= image_tag(@user.avatar_url) if @user.avatar? %>
-        <%= f.file_field :avatar %>
-      </p>
-
-      <p>
-      <label>
-          <%= f.check_box :remove_avatar %>
-          Remove avatar
-      </label>
-      </p>
     </div>
     <div class="form-group">
       <%= f.label :email %>

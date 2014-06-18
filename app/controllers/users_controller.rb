@@ -31,8 +31,6 @@ class UsersController < ApplicationController
         unless current_user.admin?
           redirect_to root_path, :alert => "El usuario #{@user.name} no tiene permiso para que vean su portafolios"
         end
-      when current_user.pago?
-        redirect_to root_path, :alert => "Para poder ver los portafolios de otros tienes que estar estar al día con tus cuotas"
       end
     end
   end

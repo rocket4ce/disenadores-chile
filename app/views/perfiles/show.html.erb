@@ -1,0 +1,29 @@
+<h1>Perfil de Usuario <span><strong><%= @user.name %></strong></span></h1>
+
+<%= simple_form_for(@perfil) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+    <%= f.input :apellidos %>
+    <%= f.input :ocupacion %>
+    <%= f.input :compania %>
+    <%= f.input :web %>
+    <%= f.input :face %>
+    <%= f.input :tw %>
+    <%= f.input :dribble %>
+    <%= f.input :linkedin %>
+    <%= f.input :vimeo %>
+    <%= f.input :flickr %>
+    <%= f.input :youtube %>
+    <%= f.input :pinterest %>
+    <%= f.input :tumblr %>
+    <%= f.input :google %>
+    <%= f.input :bio %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

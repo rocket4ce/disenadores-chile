@@ -1,6 +1,17 @@
 class PortafoliosController < ApplicationController
-  before_action :set_portafolio, only: [:edit, :update, :show]
+  before_action :set_portafolio, only: [:edit, :update]
   impressionist :actions=>[:show,:index]
+
+
+  def follow
+    @user = User.find(params[:id])
+     # => This assumes you have a variable current_user who is authenticated
+    if current_user.toggle_follow!(@user)
+      redirect_to user_path, :notice => "Lo Sigues"
+    else
+      redirect_to user_path, :alert => "Ya no lo Sigues"
+    end
+  end
 
   def index
     if current_user.pago
@@ -12,15 +23,13 @@ class PortafoliosController < ApplicationController
 
 
   def show
-    # @portafolios = Portafolio.find(params[:id])
-    # # @portafolios = Portafolio.find(params[:id])
-    # @user = @portafolio.user_id
-    # @cometarios
-    @imagenes = @portafolio.adjuntos.order('position')
-    @user = current_user
     @portafolios = Portafolio.find(params[:id])
-    @cometarios
-    # @imagenes = @portafolios.uploads.order('position')
+    @user = current_user
+    @imagenes = @portafolios.adjuntos.order('position')
+    @seguidores = @user.followers(User)
+    @siguiendo = @user.followees(User)
+    @comentarios = @portafolios.comentarios.all
+    impressionist(@portafolios)
   end
 
 

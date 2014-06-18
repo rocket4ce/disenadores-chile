@@ -1,56 +1,99 @@
-<div class="row">
+<div>
 <p id="notice"><%= notice %></p>
-  <div class="large-3 columns">
-	<p>
-	  <strong>Titulo:</strong>
-	  <%= @portafolio.titulo %>
-	</p>
+<div class="large-4 columns"> 
+	<img src="http://placehold.it/500x500&amp;text=Logo">
 
-	<p>
-	  <strong>Descripcion:</strong>
-	  <%= @portafolio.descripcion %>
-	</p>
-  	
-  </div>
-  <div class="large-9 columns">
-  	<ul <% if current_user.id === @portafolio.user_id %>id="sortable"  data-update-url="<%= sort_user_portafolios_url %>"<% end %>>
-	  <% @imagenes.each do |p| %>
-	    <li id="imagen_<%= p.id %>">
-	     <%= image_tag p.imagen_url %>
-	      <% if current_user.id === @portafolio.user_id %>
-	        <%= link_to "Eliminar", user_portafolio_adjunto_path(current_user.slug, params[:id],p), {method: :delete} %>
-	      <% end %>
-	    </li>
-	  <% end %>
-	</ul>
-  </div>
-	<% if current_user.id === @portafolio.user_id %>
-		<%= link_to 'Show', user_portafolio_path(@portafolio.user, @portafolio.slug) %>
-		<%= link_to 'Edit', edit_user_portafolio_path(@portafolio.user, @portafolio.slug) %>
-	<% end %>
+    <div class="hide-for-small panel">
+      <h3><%= @user.name if @user.name %></h3>
+      <h5 class="subheader"><%= @user.email if @user.email %></h5>
+      <hr>
+		<% @seguidores.each do |s| %>
+		<h5>Personas que me siguen</h5>
+		<ul>
+			<li class="<%= s.id %>"><%=link_to s.name, controller: "users", action: "show", id: s.slug %></li>
+		</ul>
+		<% end %>
 
-<!-- desplegar comentarios -->
-<div class="columns">
-<h1>haz un comentarios</h1>
-<% if user_signed_in? %>
-   <%= simple_form_for ([@user, @portafolios, current_user.comentarios.new ]) do |f|%>
-    <%= f.input :comentario, as: :text  %> 
-    <%= f.submit 'Comentar', :class => 'button right' %>
-   <% end %>
-<% else %>
-<p>Tienes que Registrarte</p>
-<% end %>
-</div>
+		<h5>Mis amigos</h5>
+		<ul>
+			<% @siguiendo.each do |s| %>
+				<li class="<%= s.id %>"><%=link_to s.name, controller: "users", action: "show", id: s.slug %></li>
+			<% end %>
+		</ul>
+		<div class="cantidad-visitas">
+			<%= @portafolios.impressionist_count(:filter=>:session_hash) %>
+		</div>	
 
-<div class="columns">
-	<% @comentarios.each do |c| %>
-	 <p>
-	   <%= c.user.name %>
-	   <%= c.comentario %>
-	 </p> 
+    </div>
+    <% if user_signed_in? %>
+		<% unless current_user === @user  %>
+		    <div class="panel callout radius">
+			      <h6>
+					<% if current_user.follows?(@user)  %>
+						<%= link_to("Dejar de Seguir", follow_user_path(@user), method: :post, class: "seguir") %>
+					<% else %>
+						<%= link_to("Seguir", follow_user_path(@user), method: :post, class: "seguir") %>
+					<% end %>
+			      </h6>
+		    </div>
+
+		<% end %>
 	<% end %>
 </div>
+<div class="large-8 columns">
+	
+	  <div>
+		<h1>
+		  <%= @portafolios.titulo %>
+		</h1>
+	  </div>
+	  <div>
+	  	<ul <% if current_user.id === @portafolios.user_id %>id="sortable"  data-update-url="<%= sort_user_portafolios_url %>"<% end %>>
+		  <% @imagenes.each do |p| %>
+		    <li id="imagen_<%= p.id %>">
+		     <%= image_tag p.imagen_url %>
+		      <% if current_user.id === @portafolios.user_id %>
+		        <%= link_to "Eliminar", user_portafolio_adjunto_path(current_user.slug, params[:id],p), {method: :delete} %>
+		      <% end %>
+		    </li>
+		  <% end %>
+		</ul>
+		<div class="comentario panel">
+			<p>
+		  		<%= @portafolios.descripcion %>
+			</p>
+		</div>
+	  </div>
+		<% if current_user.id === @portafolios.user_id %>
+			<%= link_to 'Show', user_portafolio_path(@portafolios.user, @portafolios.slug) %>
+			<%= link_to 'Edit', edit_user_portafolio_path(@portafolios.user, @portafolios.slug) %>
+		<% end %>
 
-
-
+	<!-- desplegar comentarios -->
+	<div >
+	<h5>haz un comentarios</h5>
+	<% if user_signed_in? %>
+	   <%= simple_form_for ([@user, @portafolios, current_user.comentarios.new ]) do |f|%>
+	    <%= f.input :comentario, as: :text  %> 
+	    <%= f.submit 'Comentar', :class => 'button right' %>
+	   <% end %>
+	<% else %>
+	<p>Tienes que Registrarte</p>
+	<% end %>
+	</div>
+	<div class="clearfix"></div>
+		
+	<% #unless @comentarios.nil? %>
+		<div class="panel">
+			<% @comentarios.each do |c| %>
+			   <strong>
+			   	<%= c.user.name %>
+			   </strong>
+			 <p>
+			   <%= c.comentario %>
+			 </p> 
+			<% end %>
+		</div>
+	<% #end %>
+</div>
 </div>
