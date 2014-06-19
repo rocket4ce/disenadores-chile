@@ -24,6 +24,8 @@ gem 'impressionist'
 gem 'font-awesome-rails'
 gem 'bootsy'
 gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'omniauth'
+gem 'omniauth-twitter'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]
