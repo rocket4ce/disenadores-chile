@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'comentarios/destroy'
 
   root :to => "home#index"
-  devise_for :users, path: "usuario", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secreto', confirmation: 'verificacion', unlock: 'bloquedo', registration: 'registro', sign_up: 'dejame_entrar' }
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }, path: "usuario", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secreto', confirmation: 'verificacion', unlock: 'bloquedo', registration: 'registro', sign_up: 'dejame_entrar' }
   
   resources :users, path: 'usuario' do
     member do

@@ -7,6 +7,7 @@
 <% else %>
   <li><%= link_to 'Entrar', new_user_session_path %></li>
   <li><%= link_to 'Registrase', new_user_registration_path %></li>
+  <li><%= link_to "Entrar con Twitter", user_omniauth_authorize_path(:twitter) %></li> 
 <% end %>
 <% if user_signed_in? %>
   <% if current_user.admin? %>
