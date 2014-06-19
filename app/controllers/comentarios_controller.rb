@@ -7,7 +7,8 @@ class ComentariosController < ApplicationController
 		@comentarios.user_id = current_user.id
 		respond_to do |format|
 			if @comentarios.save
-				format.html { redirect_to user_portafolio_path(@portafolio.user, @portafolio), notice: 'Portafolio was successfully created.' }
+				MailComentario.mail_comentario(@comentarios).deliver
+				format.html { redirect_to user_portafolio_path(@portafolio.user, @portafolio), notice: 'El comentario a sido creado' }
 			else
 				redirect_to user_portafolio_path(@portafolio.user_id, @portafolio), alert: 'No hemos podido añadir tu comentario'
 			end
