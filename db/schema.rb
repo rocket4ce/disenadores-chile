@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618175511) do
+ActiveRecord::Schema.define(version: 20140619155840) do
 
   create_table "adjuntos", force: true do |t|
     t.integer  "portafolio_id"
@@ -175,6 +175,8 @@ ActiveRecord::Schema.define(version: 20140618175511) do
     t.string   "slug"
     t.boolean  "pago"
     t.date     "fechapago"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
