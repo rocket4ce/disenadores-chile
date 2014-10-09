@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :portafolios, except: [:index], path_names: { new: "crear", edit: "editar" } do
       collection do
             post 'sort'
-          end
+      end
       resources :adjuntos, only: [:destroy]
       resources :comentarios, only: [:create, :destroy]
     end
